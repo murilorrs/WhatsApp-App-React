@@ -4,6 +4,7 @@ Obrigado pelo seu interesse em fazer parte da HYERDEV! Abaixo, você encontrará
 
 ## Avisos antes de começar
 
+0. [Link para mais detalhes](https://docs.google.com/document/d/1owpEgAuej3uij0ygmTL4Nr-AauEuf7_QHeugBDOlYe0/edit)
 1. **Leia com atenção este documento todo e tente seguir ao máximo as instruções;**
 2. **Clone este repositório no seu GitHub;**
 3. **Faça commits descritivos no seu repositório;**
@@ -77,6 +78,8 @@ Obrigado pelo seu interesse em fazer parte da HYERDEV! Abaixo, você encontrará
 - [React.js](https://reactjs.org/)
 - [Vercel](https://vercel.com/)
 - [GitHub](https://github.com/)
+- [Shadcn](https://ui.shadcn.com/)
+- [Documentação](https://docs.google.com/document/d/1owpEgAuej3uij0ygmTL4Nr-AauEuf7_QHeugBDOlYe0/edit)
 
 ---
 
