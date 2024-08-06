@@ -6,7 +6,7 @@ Obrigado pelo seu interesse em fazer parte da HYERDEV! Abaixo, você encontrará
 
 0. [Link para mais detalhes](https://docs.google.com/document/d/1owpEgAuej3uij0ygmTL4Nr-AauEuf7_QHeugBDOlYe0/edit)
 1. **Leia com atenção este documento todo e tente seguir ao máximo as instruções;**
-2. **Clone este repositório no seu GitHub;**
+2. **Fork este repositório no seu GitHub;**
 3. **Faça commits descritivos no seu repositório;**
 4. **Envie o link do seu repositório para o email do recrutador responsável;**
 5. **Você poderá consultar o Google, Stackoverflow ou qualquer outro recurso online;**
