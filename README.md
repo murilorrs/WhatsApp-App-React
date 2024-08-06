@@ -5,7 +5,7 @@ Obrigado pelo seu interesse em fazer parte da HYERDEV! Abaixo, você encontrará
 ## Avisos antes de começar
 
 1. **Leia com atenção este documento todo e tente seguir ao máximo as instruções;**
-2. **Clone o repositório no seu GitHub https://github.com/hyerdev/desafio-estagio-frontend-aug-24;**
+2. **Clone este repositório no seu GitHub;**
 3. **Faça commits descritivos no seu repositório;**
 4. **Envie o link do seu repositório para o email do recrutador responsável;**
 5. **Você poderá consultar o Google, Stackoverflow ou qualquer outro recurso online;**
