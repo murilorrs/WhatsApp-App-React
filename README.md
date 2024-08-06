@@ -73,7 +73,7 @@ Obrigado pelo seu interesse em fazer parte da HYERDEV! Abaixo, você encontrará
 
 - [StorybookJS](https://storybook.js.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [Zustand](https://zustand.surge.sh/)
+- [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 - [TailwindCSS](https://tailwindcss.com/)
 - [React.js](https://reactjs.org/)
 - [Vercel](https://vercel.com/)
