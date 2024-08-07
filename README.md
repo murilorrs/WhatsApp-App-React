@@ -50,7 +50,7 @@ Obrigado pelo seu interesse em fazer parte da HYERDEV! Abaixo, você encontrará
 3. **Utilize boas práticas do React.js:**
    - Nomes Semânticos
    - Componentes funcionais, puros e tipados
-   - Utilização de hooks e funções utilitárias
+   - Utilize se necessário hooks e funções utilitárias
 4. **O filtro e a pesquisa devem ser mantidos em estado na URL**
 5. **Grave um vídeo apresentando o funcionamento e explicando seu código**
 
