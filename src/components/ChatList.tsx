@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useChatStore } from "../state/chatStore";
+import ChatListItem from "./ChatListItem";
 
 const ChatList: React.FC = () => {
   const { chats, setChats } = useChatStore();
@@ -9,9 +10,6 @@ const ChatList: React.FC = () => {
       try {
         console.log('Fetching chats...');
         const response = await fetch('http://localhost:3001/api');
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
-        }
         const data = await response.json();
         console.log('Fetched data:', data);
         setChats(data);
@@ -23,20 +21,19 @@ const ChatList: React.FC = () => {
     fetchChats();
   }, [setChats]);
 
-  console.log('Chats from store:', chats);
-
   return (
-    <ul>
-      {chats.length > 0 ? (
-        chats.map((chat) => (
-          <li key={chat.id}>
-            {chat.name} - {chat.lastMessage}
-          </li>
-        ))
-      ) : (
-        <li>No chats available</li>
-      )}
-    </ul>
+    <div>
+      <ul>
+        {chats.map((chat) => (
+          <ChatListItem
+            name={chat.name}
+            lastMessage={chat.lastMessage}
+            lastMessageTime={chat.lastMessageTime}
+            profilePicture={chat.profilePicture}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
 
