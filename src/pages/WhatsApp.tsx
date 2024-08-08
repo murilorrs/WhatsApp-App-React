@@ -1,19 +1,17 @@
-import React from 'react';
+import React from "react";
+import ChatList from "@/components/ChatList";
 
 const WhatsApp: React.FC = () => {
+
   return (
     <div className="flex h-screen text-gray-100">
       <aside className="w-1/3 bg-customDarkGreen border-r border-customGrey">
         <header className="p-3.5 bg-customLightGreen border-b border-none">
           <h2 className="text-lg font-semibold">Chats</h2>
         </header>
-        
+
         <div className="p-3 overflow-y-auto">
-          <div className="p-2 border-b border-gray-700 hover:bg-gray-600 rounded">Contact 1</div>
-          <div className="p-2 border-b border-gray-700 hover:bg-gray-600 rounded">Contact 2</div>
-          <div className="p-2 border-b border-gray-700 hover:bg-gray-600 rounded">Contact 3</div>
-          <div className="p-2 border-b border-gray-700 hover:bg-gray-600 rounded">Contact 4</div>
-          <div className="p-2 border-b border-gray-700 hover:bg-gray-600 rounded">Contact 5</div>
+          <ChatList/>
         </div>
       </aside>
 
