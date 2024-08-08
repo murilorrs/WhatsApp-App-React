@@ -5,7 +5,7 @@ interface Chat {
   name: string;
   lastMessage: string;
   lastMessageTime: string;
-  profilePicture:string
+  profilePicture: string;
 }
 
 interface ChatState {
@@ -13,13 +13,20 @@ interface ChatState {
   filter: string;
   setChats: (chats: Chat[]) => void;
   setFilter: (filter: string) => void;
+  filteredChats: () => Chat[];
 }
 
-export const useChatStore = create<ChatState>((set) => ({
+export const useChatStore = create<ChatState>((set, get) => ({
   chats: [],
   filter: '',
-  setChats: (chats) => {
-    set({ chats });
-  },
+  setChats: (chats) => set({ chats }),
   setFilter: (filter) => set({ filter }),
+  filteredChats: () => {
+    const { chats, filter } = get();
+    return chats.filter(
+      (chat) =>
+        chat.name.toLowerCase().includes(filter.toLowerCase()) ||
+        chat.lastMessage.toLowerCase().includes(filter.toLowerCase())
+    );
+  },
 }));
