@@ -6,17 +6,22 @@ const WhatsApp: React.FC = () => {
   return (
     <div className="flex h-screen text-gray-100">
       <aside className="w-1/3 bg-customDarkGreen border-r border-customGrey">
-        <header className="p-3.5 bg-customLightGreen border-b border-none">
+        <header className="flex items-center p-3.5 bg-customLightGreen border-b border-none">
+        <img
+        src='../../public/hyerdev.png'
+        alt={`${name}'s HyerDev`}
+        className="w-12 h-12 rounded-full object-cover mr-3"
+      />
           <h2 className="text-lg font-semibold">Chats</h2>
         </header>
 
-        <div className="p-3 overflow-y-auto">
+        <div className="p-4 overflow-y-auto">
           <ChatList/>
         </div>
       </aside>
 
       <main className="flex-1 flex flex-col bg-customDarkGreen">
-        <header className="p-3.5 bg-customLightGreen border-b border-gray-600">
+        <header className="p-6 bg-customLightGreen">
           <h2 className="text-lg font-semibold">Chat Name</h2>
         </header>
 
