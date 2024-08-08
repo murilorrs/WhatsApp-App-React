@@ -24,6 +24,13 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        //Cores customizadas do projeto:
+        customLightGreen: "#202c33",
+        customLighterGreen: "#2a3942",
+        customDarkGreen: "#111b21",
+        customMessageSend: "#005c4b",
+        customMessageReceived: "#202c33",
+        customGrey: "#2a3942",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
