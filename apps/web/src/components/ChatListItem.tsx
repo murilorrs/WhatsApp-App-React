@@ -14,15 +14,14 @@ const ChatListItem: React.FC<ItemProps> = ({
   profilePicture,
 }) => {
   return (
-    <div className="flex p-2 border-b border-gray-700 hover:bg-customLightGreen items-center">
+    <div className="flex p-2 border-b border-none hover:bg-customLightGreen items-center pb-4">
       <img
         src={profilePicture}
-        alt={`${name}'s profile`}
-        className="w-12 h-12 rounded-full object-cover mr-3"
+        className="w-14 h-w-14 rounded-full object-cover mr-3 "
       />
-      <div className="flex-1">
-        <div className="text-lg font-semibold">{name}</div>
-        <div className="text-gray-400">{lastMessage}</div>
+      <div className="flex-1 pl-1.5">
+        <div className="text-lg">{name}</div>
+        <div className="text-gray-400 text-sm">{lastMessage}</div>
       </div>
       <div className="text-gray-400 text-sm">{lastMessageTime}</div>
     </div>
