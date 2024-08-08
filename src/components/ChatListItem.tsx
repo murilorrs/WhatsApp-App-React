@@ -14,7 +14,7 @@ const ChatListItem: React.FC<ItemProps> = ({
   profilePicture,
 }) => {
   return (
-    <div className="flex p-2 border-b border-gray-700 hover:bg-gray-600 rounded items-center">
+    <div className="flex p-2 border-b border-gray-700 hover:bg-customLightGreen items-center">
       <img
         src={profilePicture}
         alt={`${name}'s profile`}
