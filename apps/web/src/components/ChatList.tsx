@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { useChatStore } from "../state/chatStore";
+import { useChatStore } from "@/state/chatStore";
 import ChatListItem from "./ChatListItem";
+import ChatListSearch from "./ChatListSearch";
 
 const ChatList: React.FC = () => {
-  const { chats, setChats } = useChatStore();
+  const { setChats, filteredChats } = useChatStore();
 
   useEffect(() => {
     const fetchChats = async () => {
@@ -22,17 +23,21 @@ const ChatList: React.FC = () => {
   }, [setChats]);
 
   return (
-    <div>
-      <ul>
-        {chats.map((chat) => (
-          <ChatListItem
-            name={chat.name}
-            lastMessage={chat.lastMessage}
-            lastMessageTime={chat.lastMessageTime}
-            profilePicture={chat.profilePicture}
-          />
-        ))}
-      </ul>
+    <div className="w-full max-w-4xl mx-auto px-4 pb-4">
+      <ChatListSearch />
+      <div className="mt-4 h-[calc(100vh-4rem)] overflow-y-auto">
+        <ul>
+          {filteredChats().map((chat) => (
+            <ChatListItem
+              key={chat.id}
+              name={chat.name}
+              lastMessage={chat.lastMessage}
+              lastMessageTime={chat.lastMessageTime}
+              profilePicture={chat.profilePicture}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
