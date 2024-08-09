@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ItemProps {
+export interface ItemProps {
   name: string;
   lastMessage: string;
   lastMessageTime: string;
