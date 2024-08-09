@@ -14,7 +14,6 @@ export interface ItemProps {
 
 // Componente funcional que representa um item da lista de chats
 const ChatListItem: React.FC<ItemProps> = ({
-  // Definição das props que são passadas pelo ChatList
   name,
   lastMessage,
   lastMessageTime,
@@ -38,11 +37,11 @@ const ChatListItem: React.FC<ItemProps> = ({
 
   // Caso contrário, monta um chat com as informações da API
   return (
-    <div className="flex p-2 border-b border-none hover:bg-customLightGreen items-center pb-4 relative">
+    <div className="flex p-2 border-b border-none hover:bg-customLightGreen items-center pb-4 relative flex-col md:flex-row">
       {/* Design da foto de perfil */}
       <img
         src={profilePicture}
-        className="w-14 h-14 rounded-full object-cover mr-3"
+        className="w-14 h-14 rounded-full object-cover mr-3 mb-2 md:mb-0"
         alt={`${name}'s profile`}
       />
       {/* Design do nome e mensagem */}
@@ -51,14 +50,14 @@ const ChatListItem: React.FC<ItemProps> = ({
         <div className="text-gray-400 text-sm">{lastMessage}</div>
       </div>
 
-      {/* Design da hora da ultima mensagem, checando também se é mensagem não lida pra mudar a cor */}
+      {/* Design da hora da última mensagem */}
       <div className={`text-gray-400 text-sm pb-5 ${isUnread ? 'text-green-500' : ''}`}>
         {lastMessageTime}
       </div>
 
-      {/* Design do icone de Unread usando o componente <UnreadMessage/> */}
+      {/* Design do ícone de Unread, escondido em telas menores */}
       {isUnread && (
-        <div className="absolute right-4 pt-4 top-1/2 transform -translate-y-1/2">
+        <div className="absolute right-4 pt-4 top-1/2 transform -translate-y-1/2 hidden md:flex items-center">
           <UnreadMessage isUnread={isUnread} />
         </div>
       )}

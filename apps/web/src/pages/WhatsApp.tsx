@@ -1,21 +1,17 @@
 import React from "react";
-// Importação dos componentes pra serem colocados na tela 
 import ChatList from "@/components/ChatList";
 import ChatListSearch from "@/components/ChatListSearch";
 import ChatListFilter from "@/components/ChatListFilter";
-// Importação de alguns icons que serão utilizados (react icons)
 import { MdEmojiEmotions } from "react-icons/md";
 import { FaPlus } from "react-icons/fa";
 import { AiFillAudio } from "react-icons/ai";
 
-// Componente principal que representa a interface do WhatsApp
 const WhatsApp: React.FC = () => {
   return (
-    // Container principal
     <div className="flex h-screen text-gray-100">
 
       {/* Área lateral onde ficam os chats e pesquisa */}
-      <aside className="w-1/3 bg-customDarkGreen border-r border-customGrey flex flex-col">
+      <aside className="w-full md:w-1/3 bg-customDarkGreen border-r border-customGrey flex flex-col">
         <header className="flex items-center p-3.5 bg-customLightGreen border-b border-none">
           <img
             src="hyerdev.png"
@@ -38,9 +34,8 @@ const WhatsApp: React.FC = () => {
         </div>
       </aside>
 
-      {/* Container que representa a tela de troca de mensagens  */}
-      <main className="flex-1 flex flex-col bg-customDarkGreen">
-        {/* Título com o nome da mensagem */}
+      {/* Container que representa a tela de troca de mensagens */}
+      <main className="hidden md:flex-1 md:flex md:flex-col md:bg-customDarkGreen">
         <header className="p-6 bg-customLightGreen">
           <h2 className="text-lg font-semibold">Chat Name</h2>
         </header>
