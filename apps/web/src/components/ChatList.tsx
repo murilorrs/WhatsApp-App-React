@@ -11,7 +11,7 @@ const ChatList: React.FC = () => {
     const fetchChats = async () => {
       try {
         console.log('Fetching chats...');
-        const response = await fetch('http://localhost:3000/api');
+        const response = await fetch('https://api-desafio-estagio.vercel.app/api');
         const data = await response.json();
         console.log('Fetched data:', data);
         setChats(data);
