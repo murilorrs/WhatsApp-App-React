@@ -4,29 +4,28 @@ import ChatListSearch from "@/components/ChatListSearch";
 import ChatListFilter from "@/components/ChatListFilter";
 
 const WhatsApp: React.FC = () => {
-
   return (
     <div className="flex h-screen text-gray-100">
 
-      <aside className="w-1/3 bg-customDarkGreen border-r border-customGrey">
+      <aside className="w-1/3 bg-customDarkGreen border-r border-customGrey flex flex-col">
         <header className="flex items-center p-3.5 bg-customLightGreen border-b border-none">
-        <img
-        src='hyerdev.png'
-        alt={`HyerDev`}
-        className="w-12 h-12 rounded-full object-cover mr-3"
-      />
-        <h2 className="text-lg font-semibold">Hyerdev Chats</h2>
+          <img
+            src="hyerdev.png"
+            alt="HyerDev"
+            className="w-12 h-12 rounded-full object-cover mr-3"
+          />
+          <h2 className="text-lg font-semibold">Hyerdev Chats</h2>
         </header>
 
-        <div className="flex items-center pl-4 pr-4 pt-3">
+        <div className="flex items-center p-4">
           <ChatListSearch />
           <div className="ml-3">
-            <ChatListFilter/>
+            <ChatListFilter />
           </div>
         </div>
 
-        <div className="p-4 overflow-y-auto pt-0 pr-0 pl-3">
-          <ChatList/>
+        <div className="flex-1 overflow-y-auto">
+          <ChatList />
         </div>
       </aside>
 

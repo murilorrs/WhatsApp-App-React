@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useChatStore } from "@/state/chatStore";
 import ChatListItem from "./ChatListItem";
@@ -26,7 +27,7 @@ const ChatList: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 pb-4">
-      <div className="mt-4 h-[calc(100vh-4rem)] overflow-y-auto">
+      <div className="mt-4 h-[calc(100vh-4rem)]">
         <ul>
           {loading
             ? Array.from({ length: 5 }).map((_, index) => (
