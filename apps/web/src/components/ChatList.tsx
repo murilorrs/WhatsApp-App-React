@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useChatStore } from "@/state/chatStore";
 import ChatListItem from "./ChatListItem";
 
-// const API_URL_ENVIRONMENT = import.meta.env.VITE_API_URL;
-
 const ChatList: React.FC = () => {
   const { setChats, searchedChats } = useChatStore();
+  const [loading, setLoading] = useState<boolean>(true); 
 
   useEffect(() => {
     const fetchChats = async () => {
@@ -17,6 +16,8 @@ const ChatList: React.FC = () => {
         setChats(data);
       } catch (error) {
         console.error('Failed to fetch chats:', error);
+      } finally {
+        setLoading(false); 
       }
     };
 
@@ -25,18 +26,29 @@ const ChatList: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 pb-4">
-
       <div className="mt-4 h-[calc(100vh-4rem)] overflow-y-auto">
         <ul>
-          {searchedChats().map((chat) => (
-            <ChatListItem
-              key={chat.id}
-              name={chat.name}
-              lastMessage={chat.lastMessage}
-              lastMessageTime={chat.lastMessageTime}
-              profilePicture={chat.profilePicture}
-            />
-          ))}
+          {loading
+            ? Array.from({ length: 5 }).map((_, index) => (
+                <ChatListItem
+                  key={index}
+                  name=""
+                  lastMessage=""
+                  lastMessageTime=""
+                  profilePicture=""
+                  isLoading={true} 
+                />
+              ))
+            : searchedChats().map((chat) => (
+                <ChatListItem
+                  key={chat.id}
+                  name={chat.name}
+                  lastMessage={chat.lastMessage}
+                  lastMessageTime={chat.lastMessageTime}
+                  profilePicture={chat.profilePicture}
+                  isLoading={false}
+                />
+              ))}
         </ul>
       </div>
     </div>

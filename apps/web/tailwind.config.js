@@ -7,6 +7,8 @@ export default {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./.storybook/**/*.{js,jsx,ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -31,6 +33,7 @@ export default {
         customMessageSend: "#005c4b",
         customMessageReceived: "#202c33",
         customGrey: "#2a3942",
+        customLoadingGrey: "#e7e9ed",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
