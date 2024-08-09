@@ -43,7 +43,7 @@ const WhatsApp: React.FC = () => {
         {/* Título com o nome da mensagem */}
         <header className="p-6 bg-customLightGreen flex items-center">
           <img
-            src="../../public/foto-perfil.png"
+            src="./foto-perfil.png"
             alt="Chat Profile"
             className="absolute w-14 h-14 rounded-full object-cover mr-3" // Garante que a foto seja redonda
           />
