@@ -47,7 +47,7 @@ const WhatsApp: React.FC = () => {
             alt="Chat Profile"
             className="absolute w-14 h-14 rounded-full object-cover mr-3" // Garante que a foto seja redonda
           />
-          <h2 className="text-lg font-semibold ml-20">Livia Maria</h2>
+          <h2 className="text-lg font-semibold ml-20">Juliana Castelo</h2>
         </header>
 
         {/* Simulação de mensagens */}
