@@ -4,7 +4,7 @@ import ChatListItem from "./ChatListItem";
 import ChatListSearch from "./ChatListSearch";
 import ShadcnComponent from "./ShadcnComponent";
 
-const API_URL_ENVIRONMENT = import.meta.env.VITE_API_URL;
+// const API_URL_ENVIRONMENT = import.meta.env.VITE_API_URL;
 
 
 const ChatList: React.FC = () => {
@@ -14,7 +14,7 @@ const ChatList: React.FC = () => {
     const fetchChats = async () => {
       try {
         console.log('Fetching chats...');
-        const response = await fetch(API_URL_ENVIRONMENT);
+        const response = await fetch('https://api-desafio-estagio.vercel.app/api');
         const data = await response.json();
         console.log('Fetched data:', data);
         setChats(data);
