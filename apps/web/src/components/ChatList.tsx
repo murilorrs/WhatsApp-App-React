@@ -1,11 +1,10 @@
-
-import React, { useEffect, useState } from "react";
-import { useChatStore } from "@/state/chatStore";
-import ChatListItem from "./ChatListItem";
+import React, { useEffect, useState } from 'react';
+import { useChatStore } from '@/state/chatStore';
+import ChatListItem from './ChatListItem';
 
 const ChatList: React.FC = () => {
   const { setChats, searchedChats } = useChatStore();
-  const [loading, setLoading] = useState<boolean>(true); 
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchChats = async () => {
@@ -18,7 +17,7 @@ const ChatList: React.FC = () => {
       } catch (error) {
         console.error('Failed to fetch chats:', error);
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
@@ -37,7 +36,8 @@ const ChatList: React.FC = () => {
                   lastMessage=""
                   lastMessageTime=""
                   profilePicture=""
-                  isLoading={true} 
+                  isLoading={true}
+                  isUnread={false}
                 />
               ))
             : searchedChats().map((chat) => (
@@ -48,6 +48,7 @@ const ChatList: React.FC = () => {
                   lastMessageTime={chat.lastMessageTime}
                   profilePicture={chat.profilePicture}
                   isLoading={false}
+                  isUnread={chat.unread}
                 />
               ))}
         </ul>

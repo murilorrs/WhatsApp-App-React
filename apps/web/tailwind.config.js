@@ -34,6 +34,8 @@ export default {
         customMessageReceived: "#202c33",
         customGrey: "#2a3942",
         customLoadingGrey: "#e7e9ed",
+        customEmojiGrey: "#62717a",
+        customFilter: "#233138",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

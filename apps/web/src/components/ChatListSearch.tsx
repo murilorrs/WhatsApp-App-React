@@ -29,7 +29,8 @@ const ChatListSearch: React.FC = () => {
         value={search}
         onChange={handleChange}
         placeholder="Search"
-        className="w-full pl-10 pr-4 py-2 rounded-md bg-customLightGreen"
+        className="w-full pl-10 pr-4 py-2 rounded-md bg-customLightGreen focus:"
+        style={{outline:'none'}}
       />
     </div>
   );

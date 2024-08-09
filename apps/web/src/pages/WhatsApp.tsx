@@ -2,6 +2,9 @@ import React from "react";
 import ChatList from "@/components/ChatList";
 import ChatListSearch from "@/components/ChatListSearch";
 import ChatListFilter from "@/components/ChatListFilter";
+import { MdEmojiEmotions } from "react-icons/md";
+import { FaPlus } from "react-icons/fa";
+import { AiFillAudio } from "react-icons/ai";
 
 const WhatsApp: React.FC = () => {
   return (
@@ -44,12 +47,17 @@ const WhatsApp: React.FC = () => {
         </div>
 
         <footer className="p-4 bg-customLightGreen border-t border-customGrey flex items-center">
+          <div className="flex items-center">
+            <MdEmojiEmotions style={{ color: '#62717a', fontSize: '25px', marginRight: '20px' }} />
+            <FaPlus style={{ color: '#62717a', fontSize: '25px' }} />
+          </div>
           <input
             type="text"
             placeholder="Type a message"
-            className="flex-1 p-2 border border-customGrey bg-customLighterGreen text-gray-100 rounded"
+            className="flex-1 mx-4 p-2 border border-customGrey bg-customLighterGreen text-gray-100 rounded"
+            style={{outline:'none'}}
           />
-          <button className="ml-2 px-4 py-2 bg-customMessageSend text-white rounded">Send</button>
+          <AiFillAudio style={{ color: '#62717a', fontSize: '25px' }} />
         </footer>
       </main>
     </div>
