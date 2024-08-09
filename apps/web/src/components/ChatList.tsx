@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import { useChatStore } from "@/state/chatStore";
 import ChatListItem from "./ChatListItem";
-import ChatListSearch from "./ChatListSearch";
-import ShadcnComponent from "./ShadcnComponent";
 
 // const API_URL_ENVIRONMENT = import.meta.env.VITE_API_URL;
-
 
 const ChatList: React.FC = () => {
   const { setChats, searchedChats } = useChatStore();
@@ -14,7 +11,7 @@ const ChatList: React.FC = () => {
     const fetchChats = async () => {
       try {
         console.log('Fetching chats...');
-        const response = await fetch('https://api-desafio-estagio.vercel.app/api');
+        const response = await fetch('http://localhost:3000/api');
         const data = await response.json();
         console.log('Fetched data:', data);
         setChats(data);
@@ -28,10 +25,6 @@ const ChatList: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 pb-4">
-      <div className="flex items-center">
-        <ChatListSearch />
-        <ShadcnComponent type={1}/>
-      </div>
 
       <div className="mt-4 h-[calc(100vh-4rem)] overflow-y-auto">
         <ul>
