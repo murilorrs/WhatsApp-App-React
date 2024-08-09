@@ -27,12 +27,12 @@ async function data(req: NextApiRequest, res: NextApiResponse) {
       { id: 7, name: 'Beatriz Santos', lastMessage: 'Pode me ligar mais tarde?', lastMessageTime: '12:45', profilePicture: results[3].picture.large, group: false, unread: false },
       { id: 8, name: 'Trabalho - Projeto X', lastMessage: 'Apresentação finalizada.', lastMessageTime: '10:10', profilePicture: groupPictures[3], group: true, unread: true },
       { id: 9, name: 'Pedro Almeida', lastMessage: 'Estou atrasado, desculpe!', lastMessageTime: '10:02', profilePicture: results[4].picture.large, group: false, unread: false },
-      { id: 10, name: 'INF/UFG 3', lastMessage: 'Esse professor é bom?', lastMessageTime: '8:07', profilePicture: groupPictures[4], group: true, unread: true },
+      { id: 10, name: 'INF/UFG 3', lastMessage: 'Esse professor é bom?', lastMessageTime: '08:07', profilePicture: groupPictures[4], group: true, unread: true },
       { id: 11, name: 'Laura Costa', lastMessage: 'Reunião remarcada para às 15h', lastMessageTime: '08:00', profilePicture: results[5].picture.large, group: false, unread: false },
-      { id: 12, name: 'Jorge Lima', lastMessage: 'Pode me enviar o relatório?', lastMessageTime: '7:44', profilePicture: results[6].picture.large, group: false, unread: true },
-      { id: 13, name: 'Sofia Martins', lastMessage: 'Recebi sua mensagem.', lastMessageTime: '5:20', profilePicture: results[7].picture.large, group: false, unread: false },
-      { id: 14, name: 'Daniela Rodrigues', lastMessage: 'Obrigado pela atualização.', lastMessageTime: '4:12', profilePicture: results[8].picture.large, group: false, unread: true },
-      { id: 15, name: 'Olivia Silva', lastMessage: 'Vamos discutir isso amanhã.', lastMessageTime: '3:32', profilePicture: results[9].picture.large, group: false, unread: true },
+      { id: 12, name: 'Jorge Lima', lastMessage: 'Pode me enviar o relatório?', lastMessageTime: '07:44', profilePicture: results[6].picture.large, group: false, unread: true },
+      { id: 13, name: 'Sofia Martins', lastMessage: 'Recebi sua mensagem.', lastMessageTime: '05:20', profilePicture: results[7].picture.large, group: false, unread: false },
+      { id: 14, name: 'Daniela Rodrigues', lastMessage: 'Obrigado pela atualização.', lastMessageTime: '04:12', profilePicture: results[8].picture.large, group: false, unread: true },
+      { id: 15, name: 'Olivia Silva', lastMessage: 'Vamos discutir isso amanhã.', lastMessageTime: '03:32', profilePicture: results[9].picture.large, group: false, unread: true },
     ];
 
     res.status(200).json(chatData);
