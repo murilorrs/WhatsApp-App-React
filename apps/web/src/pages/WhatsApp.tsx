@@ -20,7 +20,7 @@ const WhatsApp: React.FC = () => {
           <img
             src="hyerdev.png"
             alt="HyerDev"
-            className="w-12 h-12 rounded-full object-cover mr-3"
+            className="w-12 h-12 rounded-full object-cover mr-3" // Garante que a foto seja redonda
           />
           <h2 className="text-lg font-semibold">Hyerdev Chats</h2>
         </header>
@@ -41,8 +41,13 @@ const WhatsApp: React.FC = () => {
       {/* Container que representa a tela de troca de mensagens  */}
       <main className="flex-1 flex flex-col bg-customDarkGreen">
         {/* Título com o nome da mensagem */}
-        <header className="p-6 bg-customLightGreen">
-          <h2 className="text-lg font-semibold">Chat Name</h2>
+        <header className="p-6 bg-customLightGreen flex items-center">
+          <img
+            src="../../public/foto-perfil.png"
+            alt="Chat Profile"
+            className="absolute w-14 h-14 rounded-full object-cover mr-3" // Garante que a foto seja redonda
+          />
+          <h2 className="text-lg font-semibold ml-20">Livia Maria</h2>
         </header>
 
         {/* Simulação de mensagens */}
