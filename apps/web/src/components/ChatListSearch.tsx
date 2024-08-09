@@ -3,10 +3,10 @@ import { useChatStore } from "@/state/chatStore";
 import { FaSearch } from "react-icons/fa";
 
 const ChatListSearch: React.FC = () => {
-  const { filter, setFilter } = useChatStore();
+  const { search, setSearch } = useChatStore();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFilter(e.target.value);
+    setSearch(e.target.value);
   };
 
   return (
@@ -16,7 +16,7 @@ const ChatListSearch: React.FC = () => {
       </div>
       <input
         type="text"
-        value={filter}
+        value={search}
         onChange={handleChange}
         placeholder="Search"
         className="w-full pl-10 pr-4 py-2 rounded-md bg-customLightGreen"

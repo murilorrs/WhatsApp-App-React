@@ -10,23 +10,23 @@ interface Chat {
 
 interface ChatState {
   chats: Chat[];
-  filter: string;
+  search: string;
   setChats: (chats: Chat[]) => void;
-  setFilter: (filter: string) => void;
-  filteredChats: () => Chat[];
+  setSearch: (filter: string) => void;
+  searchedChats: () => Chat[];
 }
 
 export const useChatStore = create<ChatState>((set, get) => ({
   chats: [],
-  filter: '',
+  search: '',
   setChats: (chats) => set({ chats }),
-  setFilter: (filter) => set({ filter }),
-  filteredChats: () => {
-    const { chats, filter } = get();
+  setSearch: (search) => set({ search }),
+  searchedChats: () => {
+    const { chats, search } = get();
     return chats.filter(
       (chat) =>
-        chat.name.toLowerCase().includes(filter.toLowerCase()) ||
-        chat.lastMessage.toLowerCase().includes(filter.toLowerCase())
+        chat.name.toLowerCase().includes(search.toLowerCase()) ||
+        chat.lastMessage.toLowerCase().includes(search.toLowerCase())
     );
   },
 }));

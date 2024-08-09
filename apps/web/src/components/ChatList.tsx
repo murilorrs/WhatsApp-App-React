@@ -3,14 +3,17 @@ import { useChatStore } from "@/state/chatStore";
 import ChatListItem from "./ChatListItem";
 import ChatListSearch from "./ChatListSearch";
 
+const API_URL_ENVIRONMENT = import.meta.env.VITE_API_URL;
+
+
 const ChatList: React.FC = () => {
-  const { setChats, filteredChats } = useChatStore();
+  const { setChats, searchedChats } = useChatStore();
 
   useEffect(() => {
     const fetchChats = async () => {
       try {
         console.log('Fetching chats...');
-        const response = await fetch('http://localhost:3000/api');
+        const response = await fetch(API_URL_ENVIRONMENT);
         const data = await response.json();
         console.log('Fetched data:', data);
         setChats(data);
@@ -27,7 +30,7 @@ const ChatList: React.FC = () => {
       <ChatListSearch />
       <div className="mt-4 h-[calc(100vh-4rem)] overflow-y-auto">
         <ul>
-          {filteredChats().map((chat) => (
+          {searchedChats().map((chat) => (
             <ChatListItem
               key={chat.id}
               name={chat.name}
