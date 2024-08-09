@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import tailwindcssAnimate from "tailwindcss-animate";
+
 export default {
   darkMode: ["class"],
   content: [
@@ -26,7 +27,7 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        //Cores customizadas do projeto:
+        // Cores customizadas do projeto:
         customLightGreen: "#202c33",
         customLighterGreen: "#2a3942",
         customDarkGreen: "#111b21",
@@ -83,6 +84,10 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontSize: {
+        // novo tamanho de fonte
+        'xxs': '0.65rem', 
       },
     },
   },
