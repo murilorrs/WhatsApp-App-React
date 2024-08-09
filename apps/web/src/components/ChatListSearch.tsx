@@ -1,12 +1,22 @@
-import React from "react";
+// ChatListSearch.tsx
+import React, { useEffect } from "react";
 import { useChatStore } from "@/state/chatStore";
 import { FaSearch } from "react-icons/fa";
 
 const ChatListSearch: React.FC = () => {
   const { search, setSearch } = useChatStore();
 
+  useEffect(() => {
+    const query = new URL(window.location.href).searchParams.get('search') || '';
+    setSearch(query);
+  }, [setSearch]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    const value = e.target.value;
+    setSearch(value);
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set('search', value);
+    window.history.replaceState(null, '', '?' + searchParams.toString());
   };
 
   return (
