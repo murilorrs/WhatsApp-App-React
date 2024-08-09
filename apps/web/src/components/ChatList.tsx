@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useChatStore } from "@/state/chatStore";
 import ChatListItem from "./ChatListItem";
 import ChatListSearch from "./ChatListSearch";
+import ShadcnComponent from "./ShadcnComponent";
 
 const API_URL_ENVIRONMENT = import.meta.env.VITE_API_URL;
 
@@ -27,7 +28,11 @@ const ChatList: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 pb-4">
-      <ChatListSearch />
+      <div className="flex items-center">
+        <ChatListSearch />
+        <ShadcnComponent type={1}/>
+      </div>
+
       <div className="mt-4 h-[calc(100vh-4rem)] overflow-y-auto">
         <ul>
           {searchedChats().map((chat) => (

@@ -8,7 +8,7 @@ const WhatsApp: React.FC = () => {
       <aside className="w-1/3 bg-customDarkGreen border-r border-customGrey">
         <header className="flex items-center p-3.5 bg-customLightGreen border-b border-none">
         <img
-        src='../../public/hyerdev.png'
+        src='hyerdev.png'
         alt={`${name}'s HyerDev`}
         className="w-12 h-12 rounded-full object-cover mr-3"
       />
