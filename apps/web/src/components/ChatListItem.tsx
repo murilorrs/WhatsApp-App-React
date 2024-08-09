@@ -21,20 +21,13 @@ const ChatListItem: React.FC<ItemProps> = ({
 }) => {
   if (isLoading) {
     return (
-      <div className="flex p-2 border-b border-none hover:bg-customLightGreen items-center pb-4">
-        {/* Skeleton for profile picture */}
-        <Skeleton className="w-14 h-14 rounded-full object-cover mr-3 bg-custom" />
-
+      <div className="flex p-2 border-b border-none hover:bg-customLighterGreen items-center pb-4">
+        <Skeleton className="w-14 h-14 rounded-full object-cover mr-3 bg-customLighterGreen" />
         <div className="flex-1 pl-1.5">
-          {/* Skeleton for name */}
-          <Skeleton className="w-[120px] h-[20px] mb-2 rounded-full bg-custom" />
-
-          {/* Skeleton for last message */}
-          <Skeleton className="w-[180px] h-[15px] rounded-full bg-custom" />
+          <Skeleton className="w-[120px] h-[20px] mb-2 rounded-full bg-customLighterGreen" />
+          <Skeleton className="w-[180px] h-[15px] rounded-full bg-customLighterGreen" />
         </div>
-
-        {/* Skeleton for last message time */}
-        <Skeleton className="w-[40px] h-[15px] ml-3 rounded-full bg-custom" />
+        <Skeleton className="w-[40px] h-[15px] ml-3 rounded-full bg-customLighterGreen" />
       </div>
     );
   }
@@ -53,7 +46,6 @@ const ChatListItem: React.FC<ItemProps> = ({
       <div className={`text-gray-400 text-sm pb-5 ${isUnread ? 'text-green-500' : ''}`}>
         {lastMessageTime}
       </div>
-
       {isUnread && (
         <div className="absolute right-4 pt-4 top-1/2 transform -translate-y-1/2">
           <UnreadMessage isUnread={isUnread} />
