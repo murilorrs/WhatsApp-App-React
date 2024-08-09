@@ -36,11 +36,11 @@ async function data(req: NextApiRequest, res: NextApiResponse) {
       { id: 10, name: 'INF/UFG 3', lastMessage: 'Esse professor é bom?', lastMessageTime: '08:07', profilePicture: groupPictures[4], group: true, unread: true },
       { id: 11, name: 'Laura Costa', lastMessage: 'Reunião remarcada para às 15h', lastMessageTime: '08:00', profilePicture: results[5].picture.large, group: false, unread: false },
       { id: 12, name: 'Jorge Lima', lastMessage: 'Pode me enviar o relatório?', lastMessageTime: '07:44', profilePicture: results[6].picture.large, group: false, unread: true },
-      { id: 13, name: 'Sofia Martins', lastMessage: 'Recebi sua mensagem.', lastMessageTime: '05:20', profilePicture: results[7].picture.large, group: false, unread: false },
-      { id: 14, name: 'Daniela Rodrigues', lastMessage: 'Obrigado pela atualização.', lastMessageTime: '04:12', profilePicture: results[8].picture.large, group: false, unread: true },
-      { id: 15, name: 'Olivia Silva', lastMessage: 'Vamos discutir isso amanhã.', lastMessageTime: '03:32', profilePicture: results[9].picture.large, group: false, unread: true },
+      { id: 13, name: 'Sofia Martins', lastMessage: 'Recebi sua mensagem.', lastMessageTime: 'Yesterday', profilePicture: results[7].picture.large, group: false, unread: false },
+      { id: 14, name: 'Daniela Rodrigues', lastMessage: 'Obrigado pela atualização.', lastMessageTime: 'Yesterday', profilePicture: results[8].picture.large, group: false, unread: true },
+      { id: 15, name: 'Olivia Silva', lastMessage: 'Vamos discutir isso amanhã.', lastMessageTime: 'Yesterday', profilePicture: results[9].picture.large, group: false, unread: true },
     ];
-    
+
     // Envia os dados dos chats como resposta da requisição
     res.status(200).json(chatData);
   } catch (error) {
