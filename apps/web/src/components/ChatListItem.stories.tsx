@@ -1,11 +1,13 @@
-// ChatListItem.stories.tsx
+// Importações necessárias para criar histórias do Storybook
 import { Meta, StoryFn } from "@storybook/react";
 import ChatListItem, { ItemProps } from "./ChatListItem";
 
+// Configurações padrão do Storybook para o componente ChatListItem
 export default {
   title: "Components/ChatListItem",
   component: ChatListItem,
   argTypes: {
+    // Define os controles no Storybook para modificar as props do componente
     profilePicture: { control: 'text' },
     name: { control: 'text' },
     lastMessage: { control: 'text' },
@@ -13,8 +15,10 @@ export default {
   },
 } as Meta;
 
+// Template para criar as histórias do ChatListItem
 const Template: StoryFn<ItemProps> = (args) => <ChatListItem {...args} />;
 
+// História padrão do ChatListItem
 export const Default = Template.bind({});
 Default.args = {
   name: "John Doe",
@@ -23,6 +27,7 @@ Default.args = {
   profilePicture: "https://via.placeholder.com/150",
 };
 
+// História onde o componente não tem mensagem
 export const NoMessage = Template.bind({});
 NoMessage.args = {
   name: "Jane Smith",
@@ -31,6 +36,7 @@ NoMessage.args = {
   profilePicture: "https://via.placeholder.com/150",
 };
 
+// História para um estado de erro no ChatListItem
 export const ErrorState = Template.bind({});
 ErrorState.args = {
   name: "Error User",
@@ -39,6 +45,7 @@ ErrorState.args = {
   profilePicture: "https://via.placeholder.com/150",
 };
 
+// História onde o ChatListItem tem uma foto de perfil customizada
 export const WithCustomProfilePicture = Template.bind({});
 WithCustomProfilePicture.args = {
   name: "Alice Johnson",
@@ -47,6 +54,7 @@ WithCustomProfilePicture.args = {
   profilePicture: "https://randomuser.me/api/portraits/women/45.jpg",
 };
 
+// História para representar o estado de carregamento do ChatListItem
 export const LoadingState = () => (
   <div className="flex p-2 border-b border-none items-center pb-4">
     <div className="w-14 h-14 rounded-full bg-gray-200 mr-3 animate-pulse"></div>

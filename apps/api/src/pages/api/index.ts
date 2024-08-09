@@ -1,14 +1,19 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
+// Função assíncrona que lida com requisições e respostas da API
 async function data(req: NextApiRequest, res: NextApiResponse) {
+   // Configura os cabeçalhos CORS para permitir requisições de qualquer origem
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   try {
+
+    // Faz uma requisição para obter dados aleatórios de pessoas
     const userResponse = await fetch('https://randomuser.me/api/?results=10');
     const { results } = await userResponse.json();
 
+    // Gera algumas fotos aleatórias para serem capas de grupos usando a api da piscum
     const groupPictures = [
       'https://picsum.photos/200/200?random=1',
       'https://picsum.photos/200/200?random=2',
@@ -17,6 +22,7 @@ async function data(req: NextApiRequest, res: NextApiResponse) {
       'https://picsum.photos/200/200?random=5',
     ];
 
+    // Define alguns dados fictícios que utilizados para gerarem os chats do WhatsApp
     const chatData = [
       { id: 1, name: 'João Silva', lastMessage: 'Olá!', lastMessageTime: '20:07', profilePicture: results[0].picture.large, group: false, unread: true },
       { id: 2, name: 'Grupo de Estudos', lastMessage: 'A reunião será às 22h.', lastMessageTime: '19:40', profilePicture: groupPictures[0], group: true, unread: false },
@@ -34,7 +40,8 @@ async function data(req: NextApiRequest, res: NextApiResponse) {
       { id: 14, name: 'Daniela Rodrigues', lastMessage: 'Obrigado pela atualização.', lastMessageTime: '04:12', profilePicture: results[8].picture.large, group: false, unread: true },
       { id: 15, name: 'Olivia Silva', lastMessage: 'Vamos discutir isso amanhã.', lastMessageTime: '03:32', profilePicture: results[9].picture.large, group: false, unread: true },
     ];
-
+    
+    // Envia os dados dos chats como resposta da requisição
     res.status(200).json(chatData);
   } catch (error) {
     console.error(error);
