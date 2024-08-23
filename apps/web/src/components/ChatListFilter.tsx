@@ -1,37 +1,32 @@
 import React, { useEffect } from 'react';
-import { useChatStore } from '@/state/chatStore'; // Importa o estado global do chat usando o Zustand
-import Filters from './Filters'; // Importa o componente que cria os filtros
+import { useChatStore } from '@/state/chatStore'; 
+import Filters from './Filters';
 
-// Componente para gerenciar os filtros da lista de chats
 const ChatListFilter: React.FC = () => {
-  const { filterGroup, filterUnread, setFilterGroup, setFilterUnread } = useChatStore(); // Obtém os valores e setters dos filtros do estado global
+  const { filterGroup, filterUnread, setFilterGroup, setFilterUnread } = useChatStore(); 
 
-  // useEffect para carregar os filtros iniciais a partir da URL
   useEffect(() => {
-    const { searchParams } = new URL(window.location.href);// Pega os parâmetros de busca da URL atual
-    setFilterGroup(searchParams.get('group') === 'true'); // Define o filtro de grupos se o parâmetro 'group' for 'true'
-    setFilterUnread(searchParams.get('unread') === 'true');// Define o filtro de mensagens não lidas se o parâmetro 'unread' for 'true'
-  }, [setFilterGroup, setFilterUnread]); // Efeito depende dos setters de filtros
+    const { searchParams } = new URL(window.location.href);
+    setFilterGroup(searchParams.get('group') === 'true'); 
+    setFilterUnread(searchParams.get('unread') === 'true');
+  }, [setFilterGroup, setFilterUnread]); 
 
-  // Função para alternar o filtro de grupos
   const toggleFilterGroup = () => {
-    const newValue = !filterGroup; // Inverte o valor do filtro de grupos
-    const searchParams = new URLSearchParams(window.location.search); // Cria um objeto para manipular os parâmetros da URL
-    searchParams.set('group', newValue.toString()); // Define o novo valor do parâmetro 'group'
-    window.history.replaceState(null, '', '?' + searchParams.toString());// Atualiza a URL sem recarregar a página
-    setFilterGroup(newValue);// Atualiza o estado global com o novo valor do filtro de grupos
+    const newValue = !filterGroup; 
+    const searchParams = new URLSearchParams(window.location.search); 
+    searchParams.set('group', newValue.toString());
+    window.history.replaceState(null, '', '?' + searchParams.toString());
+    setFilterGroup(newValue)
   };
 
-  // Função para alternar o filtro de mensagens não lidas
   const toggleFilterUnread = () => {
-    const newValue = !filterUnread; // Inverte o valor atual do filtro
-    const searchParams = new URLSearchParams(window.location.search); // Cria um objeto para manipular os parâmetros da URL
-    searchParams.set('unread', newValue.toString()); // Define o novo valor do parâmetro 'unread'
-    window.history.replaceState(null, '', '?' + searchParams.toString()); // Atualiza a URL sem recarregar a página
-    setFilterUnread(newValue); // Atualiza o estado global com o novo valor do filtro de mensagens não lidas
+    const newValue = !filterUnread;
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set('unread', newValue.toString()); 
+    window.history.replaceState(null, '', '?' + searchParams.toString()); 
+    setFilterUnread(newValue); 
   };
   
-  // Renderiza o componente Filters com os filtros e funções de toggle passadas como props
   return (
     <Filters
       filterGroup={filterGroup}
