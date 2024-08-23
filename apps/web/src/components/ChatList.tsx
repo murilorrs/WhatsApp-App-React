@@ -10,7 +10,7 @@ const ChatList: React.FC = () => {
     const fetchChats = async () => {
       try {
         console.log('Fetching chats...');
-        const response = await fetch('https://api-desafio-estagio.vercel.app/api');
+        const response = await fetch('https://react-whatsapp-app-api.vercel.app/api');
         const data = await response.json();
         setChats(data); 
       } catch (error) {
