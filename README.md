@@ -1,5 +1,8 @@
 # WhatsApp Web Clone - React
 
+# Link 
+https://react-whatsapp-app.vercel.app/ (em desenvolvimento)
+
 ## 📜 Descrição
 
 Este projeto visa reproduzir uma versão simplificada da interface do WhatsApp Web, implementando componentes essenciais como a lista de conversas, pesquisa e filtros. Todos os componentes foram desenvolvidos em React, utilizando TypeScript para tipagem, Zustand para gerenciamento de estado e TailwindCSS juntamente com Shadcn para estilização.
